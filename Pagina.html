@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AE Decor Florist - Tienda de Arreglos Florales</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header con Navegación -->
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="AE Decor Florist Logo" class="logo-img">
+            <div class="logo">AE <span>Decor</span> Florist</div>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#combos">Combos</a></li>
+                <li><a href="#ramos">Ramos</a></li>
+                <li><a href="#acerca">Acerca de Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección de Inicio con Video -->
+    <section id="inicio">
+        <div class="video-background">
+            <!-- REEMPLAZA LA RUTA DEL VIDEO AQUÍ -->
+            <video autoplay muted loop playsinline>
+                <source src="Complementos/inicio.mp4" type="video/mp4">
+              
+          
+            </video>
+            <div class="overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1>AE Decor Florist</h1>
+            <p>Transformamos emociones en arreglos florales únicos</p>
+            <a href="#combos" class="btn">Ver Productos</a>
+        </div>
+    </section>
+
+    <!-- Sección de Combos -->
+    <section id="combos">
+        <h2 class="section-title">Nuestros Combos</h2>
+        <div class="productos-container">
+            <!-- 15 combos -->
+            <div class="producto">
+                <img src="Complementos/Combo.jpeg" alt="Combo Especial" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Combo Especial</h3>
+                    <p class="producto-desc">Ramo de rosas, chocolates y tarjeta personalizada.</p>
+                    <p class="producto-precio">Q 350.00</p>
+                    <button class="btn comprar-btn" data-producto="Combo Especial" data-precio="350.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Combo+Amor" alt="Combo Amor" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Combo Amor</h3>
+                    <p class="producto-desc">12 rosas rojas, peluche y globos.</p>
+                    <p class="producto-precio">Q 425.00</p>
+                    <button class="btn comprar-btn" data-producto="Combo Amor" data-precio="425.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Combo+Elegancia" alt="Combo Elegancia" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Combo Elegancia</h3>
+                    <p class="producto-desc">Lirios, rosas blancas y base premium.</p>
+                    <p class="producto-precio">Q 500.00</p>
+                    <button class="btn comprar-btn" data-producto="Combo Elegancia" data-precio="500.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Combo+Primavera" alt="Combo Primavera" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Combo Primavera</h3>
+                    <p class="producto-desc">Flores de temporada y jarra de vidrio.</p>
+                    <p class="producto-precio">Q 295.00</p>
+                    <button class="btn comprar-btn" data-producto="Combo Primavera" data-precio="295.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Combo+Dulzura" alt="Combo Dulzura" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Combo Dulzura</h3>
+                    <p class="producto-desc">Ramo de girasoles y caja de chocolates.</p>
+                    <p class="producto-precio">Q 325.00</p>
+                    <button class="btn comprar-btn" data-producto="Combo Dulzura" data-precio="325.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Combo+Premium" alt="Combo Premium" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Combo Premium</h3>
+                    <p class="producto-desc">24 rosas, champagne y bombones.</p>
+                    <p class="producto-precio">Q 650.00</p>
+                    <button class="btn comprar-btn" data-producto="Combo Premium" data-precio="650.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Combo+Romance" alt="Combo Romance" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Combo Romance</h3>
+                    <p class="producto-desc">Ramo de rosas rosadas y tarjeta personalizada.</p>
+                    <p class="producto-precio">Q 370.00</p>
+                    <button class="btn comprar-btn" data-producto="Combo Romance" data-precio="370.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Combo+Celebración" alt="Combo Celebración" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Combo Celebración</h3>
+                    <p class="producto-desc">Mix de flores, globos y botella de vino.</p>
+                    <p class="producto-precio">Q 540.00</p>
+                    <button class="btn comprar-btn" data-producto="Combo Celebración" data-precio="540.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Combo+Encanto" alt="Combo Encanto" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Combo Encanto</h3>
+                    <p class="producto-desc">Ramo de tulipanes y caja sorpresa.</p>
+                    <p class="producto-precio">Q 400.00</p>
+                    <button class="btn comprar-btn" data-producto="Combo Encanto" data-precio="400.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Combo+Elegancia+Oro" alt="Combo Elegancia Oro" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Combo Elegancia Oro</h3>
+                    <p class="producto-desc">Rosas blancas y detalles dorados.</p>
+                    <p class="producto-precio">Q 580.00</p>
+                    <button class="btn comprar-btn" data-producto="Combo Elegancia Oro" data-precio="580.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Combo+Frescor" alt="Combo Frescor" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Combo Frescor</h3>
+                    <p class="producto-desc">Lirios y gerberas en canasta.</p>
+                    <p class="producto-precio">Q 360.00</p>
+                    <button class="btn comprar-btn" data-producto="Combo Frescor" data-precio="360.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Combo+Deslumbrante" alt="Combo Deslumbrante" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Combo Deslumbrante</h3>
+                    <p class="producto-desc">Orquídeas y rosas en caja premium.</p>
+                    <p class="producto-precio">Q 690.00</p>
+                    <button class="btn comprar-btn" data-producto="Combo Deslumbrante" data-precio="690.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Combo+Armonía" alt="Combo Armonía" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Combo Armonía</h3>
+                    <p class="producto-desc">Mix de flores silvestres en cesta.</p>
+                    <p class="producto-precio">Q 340.00</p>
+                    <button class="btn comprar-btn" data-producto="Combo Armonía" data-precio="340.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Combo+Magia" alt="Combo Magia" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Combo Magia</h3>
+                    <p class="producto-desc">Ramo de rosas azules y luces LED.</p>
+                    <p class="producto-precio">Q 520.00</p>
+                    <button class="btn comprar-btn" data-producto="Combo Magia" data-precio="520.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Combo+Serenidad" alt="Combo Serenidad" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Combo Serenidad</h3>
+                    <p class="producto-desc">Lavanda y flores blancas en jarra.</p>
+                    <p class="producto-precio">Q 385.00</p>
+                    <button class="btn comprar-btn" data-producto="Combo Serenidad" data-precio="385.00">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Ramos -->
+    <section id="ramos">
+        <h2 class="section-title">Nuestros Ramos</h2>
+        <div class="productos-container">
+            <!-- 15 ramos -->
+            <div class="producto">
+                <img src="Complementos/Combo 1.jpg" alt="Ramo Clásico" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Ramo Clásico</h3>
+                    <p class="producto-desc">12 rosas rojas con follaje verde.</p>
+                    <p class="producto-precio">Q 270.00</p>
+                    <button class="btn comprar-btn" data-producto="Ramo Clásico" data-precio="270.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Ramo+Premium" alt="Ramo Premium" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Ramo Premium</h3>
+                    <p class="producto-desc">24 rosas rojas con decoración especial.</p>
+                    <p class="producto-precio">Q 460.00</p>
+                    <button class="btn comprar-btn" data-producto="Ramo Premium" data-precio="460.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Ramo+Elegante" alt="Ramo Elegante" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Ramo Elegante</h3>
+                    <p class="producto-desc">Rosas blancas y verdes decorativas.</p>
+                    <p class="producto-precio">Q 325.00</p>
+                    <button class="btn comprar-btn" data-producto="Ramo Elegante" data-precio="325.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Ramo+Primavera" alt="Ramo Primavera" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Ramo Primavera</h3>
+                    <p class="producto-desc">Mix de flores de temporada.</p>
+                    <p class="producto-precio">Q 295.00</p>
+                    <button class="btn comprar-btn" data-producto="Ramo Primavera" data-precio="295.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Ramo+Dorado" alt="Ramo Dorado" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Ramo Dorado</h3>
+                    <p class="producto-desc">Rosas con detalles dorados y cinta.</p>
+                    <p class="producto-precio">Q 425.00</p>
+                    <button class="btn comprar-btn" data-producto="Ramo Dorado" data-precio="425.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Ramo+Sweet" alt="Ramo Sweet" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Ramo Sweet</h3>
+                    <p class="producto-desc">Rosas rosadas y blancas con babys breath.</p>
+                    <p class="producto-precio">Q 345.00</p>
+                    <button class="btn comprar-btn" data-producto="Ramo Sweet" data-precio="345.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Ramo+Vintage" alt="Ramo Vintage" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Ramo Vintage</h3>
+                    <p class="producto-desc">Flores en tonos pastel con estilo vintage.</p>
+                    <p class="producto-precio">Q 370.00</p>
+                    <button class="btn comprar-btn" data-producto="Ramo Vintage" data-precio="370.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Ramo+Exótico" alt="Ramo Exótico" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Ramo Exótico</h3>
+                    <p class="producto-desc">Orquídeas y flores tropicales.</p>
+                    <p class="producto-precio">Q 500.00</p>
+                    <button class="btn comprar-btn" data-producto="Ramo Exótico" data-precio="500.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Ramo+Campestre" alt="Ramo Campestre" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Ramo Campestre</h3>
+                    <p class="producto-desc">Flores silvestres y margaritas.</p>
+                    <p class="producto-precio">Q 310.00</p>
+                    <button class="btn comprar-btn" data-producto="Ramo Campestre" data-precio="310.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Ramo+Lujo" alt="Ramo Lujo" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Ramo Lujo</h3>
+                    <p class="producto-desc">Rosas importadas y follaje premium.</p>
+                    <p class="producto-precio">Q 580.00</p>
+                    <button class="btn comprar-btn" data-producto="Ramo Lujo" data-precio="580.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Ramo+Minimalista" alt="Ramo Minimalista" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Ramo Minimalista</h3>
+                    <p class="producto-desc">Diseño limpio con flores selectas.</p>
+                    <p class="producto-precio">Q 285.00</p>
+                    <button class="btn comprar-btn" data-producto="Ramo Minimalista" data-precio="285.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Ramo+Colorido" alt="Ramo Colorido" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Ramo Colorido</h3>
+                    <p class="producto-desc">Mix de flores en colores vibrantes.</p>
+                    <p class="producto-precio">Q 330.00</p>
+                    <button class="btn comprar-btn" data-producto="Ramo Colorido" data-precio="330.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Ramo+Romántico" alt="Ramo Romántico" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Ramo Romántico</h3>
+                    <p class="producto-desc">Rosas rojas y rosadas con encaje.</p>
+                    <p class="producto-precio">Q 400.00</p>
+                    <button class="btn comprar-btn" data-producto="Ramo Romántico" data-precio="400.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Ramo+Grande" alt="Ramo Grande" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Ramo Grande</h3>
+                    <p class="producto-desc">50 rosas en arreglo espectacular.</p>
+                    <p class="producto-precio">Q 730.00</p>
+                    <button class="btn comprar-btn" data-producto="Ramo Grande" data-precio="730.00">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Ramo+Delicado" alt="Ramo Delicado" class="producto-img">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Ramo Delicado</h3>
+                    <p class="producto-desc">Peonías y rosas en tonos suaves.</p>
+                    <p class="producto-precio">Q 450.00</p>
+                    <button class="btn comprar-btn" data-producto="Ramo Delicado" data-precio="450.00">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Acerca de Nosotros -->
+    <section id="acerca">
+        <h2 class="section-title">Acerca de Nosotros</h2>
+        <div class="acerca-content">
+            <div>
+                <img src="https://via.placeholder.com/500x350/f5ecd9/8a7a4a?text=AE+Decor+Florist" alt="Nuestra tienda" class="acerca-img">
+            </div>
+            <div>
+                <h3>Transformando momentos especiales desde 2015</h3>
+                <p>En AE Decor Florist nos especializamos en crear arreglos florales únicos que capturen la esencia de tus momentos más especiales. Nuestra pasión por las flores y la creatividad nos impulsa a diseñar productos excepcionales.</p>
+                <p>Utilizamos siempre flores frescas y de la más alta calidad, seleccionadas cuidadosamente para cada ocasión. Nuestro equipo de floristas expertos se dedica a crear diseños que superen tus expectativas.</p>
+                <p>¡Permítenos ser parte de tus momentos especiales y transformar tus emociones en arte floral!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto">
+        <h2 class="section-title">Contáctanos</h2>
+        <p>Estamos aquí para ayudarte a encontrar el arreglo perfecto</p>
+        
+        <div class="redes-sociales">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        
+        <div class="info-contacto">
+            <p><i class="fas fa-clock"></i> Horario de atención: Lunes a Sábado 9:00 AM - 7:00 PM</p>
+            <p><i class="fas fa-phone"></i> Teléfono: (123) 456-7890</p>
+            <p><i class="fas fa-envelope"></i> Email: info@aedecorflorist.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Dirección: Calle Flores 123, Ciudad Jardín</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 AE Decor Florist - Todos los derechos reservados</p>
+        <p>Diseñado con ❤️ y mucho color</p>
+    </footer>
+
+    <!-- Modal de Compra -->
+    <div id="modal-compra" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-titulo">Comprar Producto</h2>
+            <form id="form-compra">
+                <input type="hidden" id="producto-nombre">
+                <input type="hidden" id="producto-precio">
+                
+                <div class="form-group">
+                    <label for="fecha-entrega">Fecha de entrega:</label>
+                    <input type="date" id="fecha-entrega" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="hora-entrega">Hora de entrega:</label>
+                    <input type="time" id="hora-entrega" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="nombre">Tu nombre:</label>
+                    <input type="text" id="nombre" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefono">Tu teléfono:</label>
+                    <input type="tel" id="telefono" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="direccion">Dirección de entrega:</label>
+                    <input type="text" id="direccion" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="mensaje">Mensaje para la tarjeta (opcional):</label>
+                    <textarea id="mensaje" rows="3"></textarea>
+                </div>
+                
+                <button type="submit" class="btn">Enviar pedido por WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript para funcionalidades
+        document.addEventListener('DOMContentLoaded', function() {
+            // Header scroll effect
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Menu toggle para móviles
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('nav ul');
+            
+            menuToggle.addEventListener('click', function() {
+                nav.classList.toggle('active');
+            });
+            
+            // Cerrar menú al hacer clic en un enlace
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    nav.classList.remove('active');
+                });
+            });
+            
+            // Modal de compra
+            const modal = document.getElementById('modal-compra');
+            const comprarBtns = document.querySelectorAll('.comprar-btn');
+            const closeBtn = document.querySelector('.close');
+            const formCompra = document.getElementById('form-compra');
+            
+            // Abrir modal al hacer clic en comprar
+            comprarBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const producto = this.getAttribute('data-producto');
+                    const precio = this.getAttribute('data-precio');
+                    
+                    document.getElementById('modal-titulo').textContent = `Comprar: ${producto}`;
+                    document.getElementById('producto-nombre').value = producto;
+                    document.getElementById('producto-precio').value = precio;
+                    
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // Cerrar modal
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Cerrar modal al hacer clic fuera
+            window.addEventListener('click', function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Enviar formulario de compra
+            formCompra.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const producto = document.getElementById('producto-nombre').value;
+                const precio = document.getElementById('producto-precio').value;
+                const fecha = document.getElementById('fecha-entrega').value;
+                const hora = document.getElementById('hora-entrega').value;
+                const nombre = document.getElementById('nombre').value;
+                const telefono = document.getElementById('telefono').value;
+                const direccion = document.getElementById('direccion').value;
+                const mensaje = document.getElementById('mensaje').value;
+                
+                // Formatear mensaje para WhatsApp
+                const texto = `Hola, me gustaría hacer un pedido en AE Decor Florist:%0A%0A*Producto:* ${producto}%0A*Precio:* Q${precio}%0A*Fecha de entrega:* ${fecha}%0A*Hora de entrega:* ${hora}%0A*Nombre:* ${nombre}%0A*Teléfono:* ${telefono}%0A*Dirección:* ${direccion}%0A*Mensaje:* ${mensaje}`;
+                
+                // Número de WhatsApp (reemplazar con el número real)
+                const whatsappNumber = "55996252";
+                
+                // Abrir WhatsApp
+                window.open(`https://wa.me/${whatsappNumber}?text=${texto}`, '_blank');
+                
+                // Cerrar modal
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                
+                // Resetear formulario
+                formCompra.reset();
+            });
+            
+            // Establecer fecha mínima como hoy
+            const hoy = new Date().toISOString().split('T')[0];
+            document.getElementById('fecha-entrega').setAttribute('min', hoy);
+        });
+    </script>
+</body>
+</html>
