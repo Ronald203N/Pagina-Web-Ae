@@ -402,6 +402,7 @@
     </div>
 
     <script>
+
         // JavaScript para funcionalidades
         document.addEventListener('DOMContentLoaded', function() {
             // Header scroll effect
@@ -412,6 +413,41 @@
                 } else {
                     header.classList.remove('scrolled');
                 }
+                // Verificar horario de compra (10:00 AM - 6:00 PM)
+function verificarHorarioCompra() {
+    const ahora = new Date();
+    const horaActual = ahora.getHours();
+    const minutosActual = ahora.getMinutes();
+    const horaActualDecimal = horaActual + (minutosActual / 60);
+    
+    // Verificar si está dentro del horario comercial (10:00 AM - 6:00 PM)
+    const dentroDeHorario = horaActualDecimal >= 10 && horaActualDecimal < 18;
+    
+    // Obtener todos los botones de compra
+    const comprarBtns = document.querySelectorAll('.comprar-btn');
+    
+    comprarBtns.forEach(btn => {
+        if (!dentroDeHorario) {
+            btn.disabled = true;
+            btn.textContent = "Fuera de horario";
+            btn.style.opacity = "0.6";
+            btn.style.cursor = "not-allowed";
+        } else {
+            btn.disabled = false;
+            btn.textContent = "Comprar";
+            btn.style.opacity = "1";
+            btn.style.cursor = "pointer";
+        }
+    });
+    
+    return dentroDeHorario;
+}
+
+// Verificar horario al cargar la página
+verificarHorarioCompra();
+
+// Verificar horario cada minuto
+setInterval(verificarHorarioCompra, 60000);
             });
             
             // Menu toggle para móviles
@@ -437,6 +473,36 @@
             const formCompra = document.getElementById('form-compra');
             const btnComprarFinal = document.getElementById('btn-comprar-final');
             
+// Efecto de florecitas al hacer clic en comprar
+comprarBtns.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        // Verificar horario antes de permitir la compra
+        if (!verificarHorarioCompra()) {
+            alert("Lo sentimos, solo aceptamos pedidos de 10:00 AM a 6:00 PM.");
+            return;
+        }
+        
+        const producto = this.getAttribute('data-producto');
+        const precio = this.getAttribute('data-precio');
+        
+        document.getElementById('modal-titulo').textContent = `Comprar: ${producto}`;
+        document.getElementById('producto-nombre').value = producto;
+        document.getElementById('producto-precio').value = precio;
+        
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        // Crear florecitas al hacer clic en comprar
+        for (let i = 0; i < 10; i++) {
+            setTimeout(() => {
+                const x = e.clientX + (Math.random() - 0.5) * 100;
+                const y = e.clientY + (Math.random() - 0.5) * 100;
+                crearFlorecita(x, y);
+            }, i * 100);
+        }
+    });
+});
+
             // Función para crear florecitas
             function crearFlorecita(x, y) {
                 const florecita = document.createElement('div');
