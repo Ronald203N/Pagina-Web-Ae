@@ -352,54 +352,64 @@
         <p>Diseñado con ❤️ y mucho color</p>
     </footer>
 
-    <!-- Modal de Compra -->
-    <div id="modal-compra" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 id="modal-titulo">Comprar Producto</h2>
-            <form id="form-compra">
-                <input type="hidden" id="producto-nombre">
-                <input type="hidden" id="producto-precio">
-                
-                <div class="form-group">
-                    <label for="fecha-entrega">Fecha de entrega:</label>
-                    <input type="date" id="fecha-entrega" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="hora-entrega">Hora de entrega:</label>
-                    <input type="time" id="hora-entrega" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="nombre">Tu nombre:</label>
-                    <input type="text" id="nombre" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="nombre-recibe">Nombre de quien recibe:</label>
-                    <input type="text" id="nombre-recibe" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="telefono">Teléfono de quien recibe:</label>
-                    <input type="tel" id="telefono" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="direccion">Dirección de entrega y Especificaciones:</label>
-                    <input type="text" id="direccion" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="mensaje">Mensaje para la tarjeta (opcional):</label>
-                    <textarea id="mensaje" rows="3"></textarea>
-                </div>
-                
-                <button type="submit" class="btn" id="btn-comprar-final">Enviar pedido por WhatsApp</button>
-            </form>
-        </div>
+<!-- Modal de Compra -->
+<div id="modal-compra" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modal-titulo">Comprar Producto</h2>
+        <form id="form-compra">
+            <input type="hidden" id="producto-nombre">
+            <input type="hidden" id="producto-precio">
+            
+            <!-- Nuevo campo: Tipo de entrega -->
+            <div class="form-group">
+                <label for="tipo-entrega">Tipo de entrega:</label>
+                <select id="tipo-entrega" required>
+                    <option value="">Seleccione una opción</option>
+                    <option value="domicilio">Entrega a domicilio</option>
+                    <option value="tienda">Recoger en tienda</option>
+                </select>
+            </div>
+            
+            <div class="form-group" id="grupo-direccion">
+                <label for="direccion">Dirección de entrega y Especificaciones:</label>
+                <input type="text" id="direccion" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="fecha-entrega">Fecha de entrega:</label>
+                <input type="date" id="fecha-entrega" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="hora-entrega">Hora de entrega:</label>
+                <input type="time" id="hora-entrega" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="nombre">Tu nombre:</label>
+                <input type="text" id="nombre" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="nombre-recibe">Nombre de quien recibe:</label>
+                <input type="text" id="nombre-recibe" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="telefono">Teléfono de quien recibe:</label>
+                <input type="tel" id="telefono" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="mensaje">Mensaje para la tarjeta (opcional):</label>
+                <textarea id="mensaje" rows="3"></textarea>
+            </div>
+            
+            <button type="submit" class="btn" id="btn-comprar-final">Enviar pedido por WhatsApp</button>
+        </form>
     </div>
+</div>
 
     <script>
 
@@ -569,19 +579,40 @@ comprarBtns.forEach(btn => {
             });
             
             // Enviar formulario de compra
-            formCompra.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const producto = document.getElementById('producto-nombre').value;
-                const precio = document.getElementById('producto-precio').value;
-                const fecha = document.getElementById('fecha-entrega').value;
-                const hora = document.getElementById('hora-entrega').value;
-                const nombre = document.getElementById('nombre').value;
-                const nombreRecibe = document.getElementById('nombre-recibe').value;
-                const telefono = document.getElementById('telefono').value;
-                const direccion = document.getElementById('direccion').value;
-                const mensaje = document.getElementById('mensaje').value;
-                
+            // Variables para el control de tipo de entrega
+const tipoEntrega = document.getElementById('tipo-entrega');
+const grupoDireccion = document.getElementById('grupo-direccion');
+const campoDireccion = document.getElementById('direccion');
+
+// Manejar cambio en tipo de entrega
+tipoEntrega.addEventListener('change', function() {
+    if (this.value === 'tienda') {
+        grupoDireccion.style.display = 'none';
+        campoDireccion.removeAttribute('required');
+    } else {
+        grupoDireccion.style.display = 'block';
+        campoDireccion.setAttribute('required', 'required');
+    }
+});
+
+// Modificar la función de envío a WhatsApp
+formCompra.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const producto = document.getElementById('producto-nombre').value;
+    const precio = document.getElementById('producto-precio').value;
+    const tipoEntregaVal = document.getElementById('tipo-entrega').value;
+    const fecha = document.getElementById('fecha-entrega').value;
+    const hora = document.getElementById('hora-entrega').value;
+    const nombre = document.getElementById('nombre').value;
+    const nombreRecibe = document.getElementById('nombre-recibe').value;
+    const telefono = document.getElementById('telefono').value;
+    const direccion = tipoEntregaVal === 'tienda' ? 'Recoger en tienda' : document.getElementById('direccion').value;
+    const mensaje = document.getElementById('mensaje').value;
+    
+
+
+
                 // Formatear mensaje para WhatsApp
                 const texto = `Hola, me gustaría hacer un pedido en AE Decor Florist:%0A%0A*Producto:* ${producto}%0A*Precio:* Q${precio}%0A*Fecha de entrega:* ${fecha}%0A*Hora de entrega:* ${hora}%0A*Nombre:* ${nombre}%0A*Recibe:* ${nombreRecibe}%0A*Teléfono:* ${telefono}%0A*Dirección:* ${direccion}%0A*Mensaje:* ${mensaje}`;
                 
