@@ -704,5 +704,148 @@ footer p {
         width: 50px;
         height: 50px;
     }
+
+/* Modal de Detalles */
+.modal-detalle-content {
+    max-width: 95%;
+    width: 90%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.detalle-contenido {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: flex-start;
+    overflow-y: auto;
+    max-height: calc(90vh - 100px);
+}
+
+.detalle-imagen-container {
+    flex: 1;
+    min-width: 300px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.detalle-img {
+    max-width: 100%;
+    max-height: 60vh;
+    width: auto;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(194, 162, 94, 0.2);
+    object-fit: contain;
+}
+
+.detalle-info {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.detalle-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #8a7a4a;
+}
+
+.detalle-info p {
+    margin-bottom: 1.5rem;
+    color: #7a6c44;
+    line-height: 1.6;
+}
+
+.close-detalle {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #c2a25e;
+    transition: color 0.3s;
+    z-index: 10;
+}
+
+.close-detalle:hover {
+    color: #8a7a4a;
+}
+
+
+/* Responsive para modal de detalles */
+@media (max-width: 992px) {
+    .modal-detalle-content {
+        width: 95%;
+        max-width: 95%;
+    }
     
+    .detalle-contenido {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .detalle-imagen-container {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .detalle-img {
+        max-height: 50vh;
+        width: 100%;
+        max-width: 500px;
+    }
+    
+    .detalle-info {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .detalle-img {
+        max-height: 40vh;
+    }
+    
+    .detalle-info h3 {
+        font-size: 1.5rem;
+    }
+}
+
+}
+.detalle-btn {
+    background: linear-gradient(to right, #8a7a4a, #a08d5c);
+    margin-top: 0.5rem;
+}
+
+.detalle-btn:hover {
+    background: linear-gradient(to right, #7a6c44, #8e7d53);
+}
+/* Mejoras para visualización en móviles */
+@media (max-width: 768px) {
+    .detalle-contenido {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .detalle-img {
+        max-height: 40vh;
+        max-width: 100%;
+    }
+    
+    .detalle-info {
+        padding: 0 1rem;
+    }
+}
+
+/* Asegurar que el modal sea responsive */
+.modal {
+    padding: 10px;
+}
+
+/* Mejorar el scroll en dispositivos móviles */
+.detalle-contenido {
+    -webkit-overflow-scrolling: touch;
 }
