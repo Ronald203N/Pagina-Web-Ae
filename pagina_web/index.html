@@ -421,7 +421,7 @@ function verificarHorarioCompra() {
     const horaActualDecimal = horaActual + (minutosActual / 60);
     
     // Verificar si está dentro del horario comercial (10:00 AM - 6:00 PM)
-    const dentroDeHorario = horaActualDecimal >= 10 && horaActualDecimal < 18;
+    const dentroDeHorario = horaActualDecimal >= 10 && horaActualDecimal < 24;
     
     // Obtener todos los botones de compra
     const comprarBtns = document.querySelectorAll('.comprar-btn');
