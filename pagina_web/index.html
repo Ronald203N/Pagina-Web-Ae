@@ -93,7 +93,7 @@
             
             <div class="producto">
                 <img src="https://via.placeholder.com/300x200/f5ecd9/8a7a4a?text=Combo+Dulzura" alt="Combo Dulzura" class="producto-img">
-                <div class="极roducto-info">
+                <div class="producto-info">
                     <h3 class="producto-titulo">Combo Dulzura</h3>
                     <p class="producto-desc">Ramo de girasoles y caja de chocolates.</p>
                     <p class="producto-precio">Q 325.00</p>
@@ -106,7 +106,7 @@
                 <div class="producto-info">
                     <h3 class="producto-titulo">Combo Premium</h3>
                     <p class="producto-desc">24 rosas, champagne y bombones.</p>
-                    <极 class="producto-precio">Q 650.00</p>
+                    <p class="producto-precio">Q 650.00</p>
                     <button class="btn comprar-btn" data-producto="Combo Premium" data-precio="650.00">Comprar</button>
                 </div>
             </div>
@@ -580,12 +580,12 @@ comprarBtns.forEach(btn => {
             
             // Enviar formulario de compra
             // Variables para el control de tipo de entrega
-const tipoEntrega = document.getElementById('tipo-entrega');
-const grupoDireccion = document.getElementById('grupo-direccion');
-const campoDireccion = document.getElementById('direccion');
+     const tipoEntrega = document.getElementById('tipo-entrega');
+     const grupoDireccion = document.getElementById('grupo-direccion');
+     const campoDireccion = document.getElementById('direccion');
 
-// Manejar cambio en tipo de entrega
-tipoEntrega.addEventListener('change', function() {
+ // Manejar cambio en tipo de entrega
+    tipoEntrega.addEventListener('change', function() {
     if (this.value === 'tienda') {
         grupoDireccion.style.display = 'none';
         campoDireccion.removeAttribute('required');
@@ -595,8 +595,8 @@ tipoEntrega.addEventListener('change', function() {
     }
 });
 
-// Modificar la función de envío a WhatsApp
-formCompra.addEventListener('submit', function(e) {
+      // Modificar la función de envío a WhatsApp
+    formCompra.addEventListener('submit', function(e) {
     e.preventDefault();
     
     const producto = document.getElementById('producto-nombre').value;
