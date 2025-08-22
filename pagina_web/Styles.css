@@ -64,8 +64,8 @@ header.scrolled {
 }
 
 .logo-img {
-    width: 60px;
-    height: 60px;
+    width: 75px;
+    height: 75px;
     margin-right: 15px;
     border-radius: 50%;
     object-fit: cover;
@@ -646,8 +646,8 @@ footer p {
     }
     
     .logo-img {
-        width: 40px;
-        height: 40px;
+        width: 55px;
+        height: 55px;
         margin-right: 10px;
     }
     
