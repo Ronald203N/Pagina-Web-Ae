@@ -386,9 +386,41 @@
             </div>
             
             <div class="form-group">
-                <label for="hora-entrega">Hora de entrega:</label>
-                <input type="time" id="hora-entrega" required>
-            </div>
+    <label for="hora-entrega">Hora de entrega:</label>
+    <select id="hora-entrega" required>
+        <option value="">Seleccione una hora</option>
+        <option value="11:00">11:00 AM</option>
+        <option value="11:15">11:15 AM</option>
+        <option value="11:30">11:30 AM</option>
+        <option value="11:45">11:45 AM</option>
+        <option value="12:00">12:00 PM</option>
+        <option value="12:15">12:15 PM</option>
+        <option value="12:30">12:30 PM</option>
+        <option value="12:45">12:45 PM</option>
+        <option value="13:00">1:00 PM</option>
+        <option value="13:15">1:15 PM</option>
+        <option value="13:30">1:30 PM</option>
+        <option value="13:45">1:45 PM</option>
+        <option value="14:00">2:00 PM</option>
+        <option value="14:15">2:15 PM</option>
+        <option value="14:30">2:30 PM</option>
+        <option value="14:45">2:45 PM</option>
+        <option value="15:00">3:00 PM</option>
+        <option value="15:15">3:15 PM</option>
+        <option value="15:30">3:30 PM</option>
+        <option value="15:45">3:45 PM</option>
+        <option value="16:00">4:00 PM</option>
+        <option value="16:15">4:15 PM</option>
+        <option value="16:30">4:30 PM</option>
+        <option value="16:45">4:45 PM</option>
+        <option value="17:00">5:00 PM</option>
+        <option value="17:15">5:15 PM</option>
+        <option value="17:30">5:30 PM</option>
+        <option value="17:45">5:45 PM</option>
+        <option value="18:00">6:00 PM</option>
+    </select>
+</div>
+
             
             <div class="form-group">
                 <label for="nombre">Tu nombre:</label>
@@ -539,7 +571,7 @@ function verificarHorarioCompra() {
     const horaActualDecimal = horaActual + (minutosActual / 60);
     
     // Verificar si está dentro del horario comercial (10:00 AM - 6:00 PM)
-    const dentroDeHorario = horaActualDecimal >= 10 && horaActualDecimal <18;
+    const dentroDeHorario = horaActualDecimal >= 2 && horaActualDecimal <24;
     
     // Obtener todos los botones de compra
     const comprarBtns = document.querySelectorAll('.comprar-btn');
@@ -686,6 +718,17 @@ comprarBtns.forEach(btn => {
                 }
             });
             
+
+            // Función para formatear la hora en formato 12h (AM/PM)
+function formatearHoraAmigable(hora24) {
+    if (!hora24) return '';
+    
+    const [horas, minutos] = hora24.split(':').map(Number);
+    const period = horas >= 12 ? 'PM' : 'AM';
+    const horas12 = horas % 12 || 12; // Convertir 0 a 12 para formato 12h
+    
+    return `${horas12}:${minutos.toString().padStart(2, '0')} ${period}`;
+}
             // Enviar formulario de compra
             // Variables para el control de tipo de entrega
      const tipoEntrega = document.getElementById('tipo-entrega');
@@ -703,40 +746,49 @@ comprarBtns.forEach(btn => {
     }
 });
 
-      // Modificar la función de envío a WhatsApp
-    formCompra.addEventListener('submit', function(e) {
+     // Enviar formulario de compra
+formCompra.addEventListener('submit', function(e) {
     e.preventDefault();
     
+    // Obtener los valores del formulario
     const producto = document.getElementById('producto-nombre').value;
     const precio = document.getElementById('producto-precio').value;
     const tipoEntregaVal = document.getElementById('tipo-entrega').value;
     const fecha = document.getElementById('fecha-entrega').value;
-    const hora = document.getElementById('hora-entrega').value;
+    const horaSelect = document.getElementById('hora-entrega');
+    const horaValor = horaSelect.value;
+    const horaTexto = formatearHoraAmigable(horaValor); // Formatear a texto amigable
     const nombre = document.getElementById('nombre').value;
     const nombreRecibe = document.getElementById('nombre-recibe').value;
     const telefono = document.getElementById('telefono').value;
     const direccion = tipoEntregaVal === 'tienda' ? 'Recoger en tienda' : document.getElementById('direccion').value;
     const mensaje = document.getElementById('mensaje').value;
     
-
-
-
-                // Formatear mensaje para WhatsApp
-                const texto = `Hola, me gustaría hacer un pedido en AE Decor Florist:%0A%0A*Producto:* ${producto}%0A*Precio:* Q${precio}%0A*Fecha de entrega:* ${fecha}%0A*Hora de entrega:* ${hora}%0A*Nombre:* ${nombre}%0A*Recibe:* ${nombreRecibe}%0A*Teléfono:* ${telefono}%0A*Dirección:* ${direccion}%0A*Mensaje:* ${mensaje}`;
-                
-                // Número de WhatsApp (reemplazar con el número real)
-                const whatsappNumber = "55996252";
-                
-                // Abrir WhatsApp
-                window.open(`https://wa.me/${whatsappNumber}?text=${texto}`, '_blank');
-                
-                // Cerrar modal
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-                
-                // Resetear formulario
-                formCompra.reset();
-            });
+    // Validar que se haya seleccionado una hora
+    if (!horaValor) {
+        alert('Por favor, seleccione una hora de entrega');
+        horaSelect.focus();
+        return;
+    }
+    
+    // Formatear mensaje para WhatsApp
+    const texto = `Hola, me gustaría hacer un pedido en AE Decor Florist:%0A%0A*Producto:* ${producto}%0A*Precio:* Q${precio}%0A*Tipo de entrega:* ${tipoEntregaVal === 'tienda' ? 'Recoger en tienda' : 'Entrega a domicilio'}%0A*Fecha de entrega:* ${fecha}%0A*Hora de entrega:* ${horaTexto}%0A*Nombre:* ${nombre}%0A*Recibe:* ${nombreRecibe}%0A*Teléfono:* ${telefono}%0A*Dirección:* ${direccion}%0A*Mensaje:* ${mensaje}`;
+    
+    // Número de WhatsApp
+    const whatsappNumber = "55996252";
+    
+    // Abrir WhatsApp
+    window.open(`https://wa.me/${whatsappNumber}?text=${texto}`, '_blank');
+    
+    // Cerrar modal
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    
+    // Resetear formulario
+    formCompra.reset();
+    grupoDireccion.style.display = 'block';
+    campoDireccion.setAttribute('required', 'required');
+});
             
             // Establecer fecha mínima como hoy
             const hoy = new Date().toISOString().split('T')[0];
